@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uk-energy-cost-calculator.vercel.app/sitemap.xml

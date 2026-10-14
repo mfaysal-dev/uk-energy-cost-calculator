@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Appliance Energy Cost Calculator UK – Ofgem Price Cap 2026</title>
+<meta name="description" content="How much does your kettle, heater or tumble dryer cost to run? Watts × hours × the Ofgem price cap rate (26.32p/kWh from 1 October 2026), editable.">
+<link rel="canonical" href="https://uk-energy-cost-calculator.vercel.app/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Mahir Faysal">
+<meta name="theme-color" content="#b45309">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="UK Appliance Energy Running Cost Calculator">
+<meta property="og:title" content="How Much Does It Cost to Run? UK Appliance Energy Calculator">
+<meta property="og:description" content="Running costs per hour, day, week, month and year for any appliance, using the Ofgem price cap unit rate for October to December 2026.">
+<meta property="og:url" content="https://uk-energy-cost-calculator.vercel.app/">
+<meta property="og:image" content="https://uk-energy-cost-calculator.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="UK appliance energy running cost calculator using the Ofgem price cap">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Much Does It Cost to Run? UK Appliance Energy Calculator">
+<meta name="twitter:description" content="Running costs per hour, day, week, month and year for any appliance, using the Ofgem price cap unit rate for October to December 2026.">
+<meta name="twitter:image" content="https://uk-energy-cost-calculator.vercel.app/og.png">
+<style>:root{--accent:#b45309;--accent-2:#f59e0b;--accent-soft:#fff6e5;--hero:linear-gradient(135deg,#451a03 0%,#92400e 50%,#d97706 100%)}
+@media (prefers-color-scheme:dark){:root{--accent:#fcd34d;--accent-2:#fbbf24;--accent-soft:#2b1d05}}
+.crumbs{font-size:13px;margin:0 0 14px;opacity:.85}.crumbs a{color:#fff}.crumbs span{margin:0 6px;opacity:.7}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media (max-width:420px){.row2{grid-template-columns:1fr}}
+.inline{display:flex;gap:10px;align-items:stretch}.inline .money{flex:1;min-width:0}.inline select{width:auto;flex:none;font-size:15px}input{min-width:0}.toplinks a{white-space:nowrap}.card{min-width:0}
+
+.tick{display:flex;gap:10px;align-items:center;font-weight:600;font-size:15px;cursor:pointer;margin:10px 0}.tick input{width:20px;height:20px;accent-color:var(--accent);flex:none}
+fieldset>legend{font-weight:800;font-size:16px;margin-bottom:12px;padding:0}
+.stats.three{grid-template-columns:repeat(3,minmax(0,1fr))}@media (max-width:420px){.stats.three{grid-template-columns:1fr 1fr}}
+
+.ap{border:1.5px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px;background:var(--card)}
+.ap .top{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.ap .top input{flex:1;font-size:16px;padding:10px 12px}
+.ap .rm{font:inherit;font-size:20px;line-height:1;border:0;background:var(--soft);color:var(--muted);width:40px;height:40px;border-radius:10px;cursor:pointer;flex:none}
+.ap .rm:hover{color:#b91c1c}
+.ap .nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.ap .nums label{font-size:12px;color:var(--muted);font-weight:650;display:block}
+.ap .nums input{font-size:16px;padding:10px 12px;margin-top:4px}
+.ap .cost{font-size:13px;color:var(--muted);margin-top:8px}
+.ap .cost b{color:var(--accent)}
+.addrow{display:flex;gap:8px}
+.addrow select{flex:1;min-width:0;font-size:15px}
+.addrow .btn{flex:none}
+#calc .money.pct input{padding-right:72px}
+</style>
+<link rel="stylesheet" href="base.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "@id": "https://uk-energy-cost-calculator.vercel.app/#app", "name": "UK Appliance Energy Running Cost Calculator", "url": "https://uk-energy-cost-calculator.vercel.app/", "description": "Free UK appliance running cost calculator using the Ofgem energy price cap electricity unit rate (26.32p per kWh for Direct Debit, 1 October to 31 December 2026), with an editable rate and a list of appliances.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "inLanguage": "en-GB", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}, "areaServed": {"@type": "Country", "name": "United Kingdom"}, "image": "https://uk-energy-cost-calculator.vercel.app/og.png", "author": {"@type": "Person", "name": "Mahir Faysal", "url": "https://mfaysal.com"}, "isBasedOn": "https://www.ofgem.gov.uk/information-consumers/energy-advice-households/get-energy-price-cap-standing-charges-and-unit-rates-region", "dateModified": "2026-10-08"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Mahir Faysal", "item": "https://mfaysal.com/"}, {"@type": "ListItem", "position": 2, "name": "UK tools", "item": "https://mfaysal.com/uk-tools"}, {"@type": "ListItem", "position": 3, "name": "Energy Running Cost Calculator", "item": "https://uk-energy-cost-calculator.vercel.app/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I work out how much an appliance costs to run?", "acceptedAnswer": {"@type": "Answer", "text": "Divide its power in watts by 1,000 to get kilowatts, multiply by the hours you use it to get kilowatt-hours (kWh), then multiply by your unit rate. A 2,000 W heater used for 3 hours uses 6 kWh, which costs £1.58 at 26.32p per kWh."}}, {"@type": "Question", "name": "What is the electricity price cap unit rate now?", "acceptedAnswer": {"@type": "Answer", "text": "From 1 October to 31 December 2026 the Ofgem price cap averages 26.32p per kWh for electricity, with a daily standing charge of 54.83p, for people paying by Direct Debit in England, Scotland and Wales. There’s no VAT on electricity from 1 October 2026 to 31 March 2027."}}, {"@type": "Question", "name": "How much does it cost to boil a kettle?", "acceptedAnswer": {"@type": "Answer", "text": "A 3 kW kettle that runs for 4 minutes uses 0.2 kWh. At 26.32p per kWh that’s about 5.3p. Boiling only the water you need cuts the cost."}}, {"@type": "Question", "name": "Is the price cap a limit on my bill?", "acceptedAnswer": {"@type": "Answer", "text": "No. It caps the unit rate and standing charge on standard variable tariffs, not your total bill. The more you use, the more you pay, and your rate depends on your region, meter and how you pay."}}, {"@type": "Question", "name": "Does this include the standing charge?", "acceptedAnswer": {"@type": "Answer", "text": "The appliance costs don’t, because you pay the standing charge every day whatever you use. The calculator shows it separately so you can see your full yearly electricity cost."}}, {"@type": "Question", "name": "How much does a 2 kW heater cost per hour?", "acceptedAnswer": {"@type": "Answer", "text": "At 26.32p per kWh, a 2 kW (2,000 W) heater costs about 52.6p for every hour it runs at full power. Thermostats cycle on and off, so the real cost is often lower."}}, {"@type": "Question", "name": "Where do I find my appliance’s wattage?", "acceptedAnswer": {"@type": "Answer", "text": "Look for the rating plate or sticker on the back or base, or check the manual. Fridges and washing machines also show an energy label with yearly kWh, which is more accurate than their maximum wattage."}}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#calc">Skip to calculator</a>
+<header class="hero">
+  <div class="wrap">
+    <nav class="topbar" aria-label="Site">
+      <a class="brand" href="./"><span class="logo" aria-hidden="true">⚡</span><span>Energy Cost Calculator</span></a>
+      <div class="toplinks"><a href="#how">How it works</a><a href="#faq">FAQs</a><a href="https://take-home-pay-calculator-uk.vercel.app/">Take-home pay</a></div>
+    </nav>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="https://mfaysal.com/">mfaysal.com</a><span aria-hidden="true">›</span><a href="https://mfaysal.com/uk-tools">UK tools</a><span aria-hidden="true">›</span><span class="here">Energy Running Cost Calculator</span></nav>
+    <h1>Appliance Energy Running Cost Calculator</h1>
+    <p class="lede">Find out what your appliances cost to run per hour, day, week, month and year, using the current Ofgem price cap electricity rate or your own tariff.</p>
+    <ul class="badges" aria-label="Highlights"><li>26.32p/kWh · Oct–Dec 2026 cap</li><li>Add several appliances</li><li>Editable unit rate</li><li>Free · No sign-up</li></ul>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+<div class="app" id="calc">
+    <section class="card" aria-labelledby="in-h">
+      <h2 id="in-h">Your electricity rate</h2>
+      <div class="field">
+        <label for="cap">Price</label>
+        <select id="cap"></select>
+        <p class="hint" id="capHint"></p>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="unit">Unit rate</label>
+          <div class="money pct"><input id="unit" type="number" inputmode="decimal" min="0" max="200" step="0.01" value="26.32"><span class="sfx" aria-hidden="true">p/kWh</span></div>
+        </div>
+        <div class="field">
+          <label for="standing">Standing charge</label>
+          <div class="money pct"><input id="standing" type="number" inputmode="decimal" min="0" max="300" step="0.01" value="54.83"><span class="sfx" aria-hidden="true">p/day</span></div>
+        </div>
+      </div>
+      <p class="hint" style="margin:-12px 0 18px">Type the rates from your bill for an exact figure. The unit rate is what each appliance costs; the standing charge is paid daily regardless.</p>
+
+      <h2 style="margin-top:6px">Your appliances</h2>
+      <div id="list"></div>
+      <div class="addrow">
+        <select id="preset" aria-label="Appliance to add"></select>
+        <button class="btn" id="add" type="button">+ Add</button>
+      </div>
+      <p class="hint">Wattages are typical examples. Check your appliance’s rating plate or manual and edit the figures.</p>
+    </section>
+
+    <section class="card sticky" aria-labelledby="out-h">
+      <h2 id="out-h" class="sr-only">Running costs</h2>
+      <div class="seg" role="radiogroup" aria-label="Show cost per" style="margin-bottom:6px">
+        <label><input type="radio" name="view" value="year" checked><span>Year</span></label>
+        <label><input type="radio" name="view" value="month"><span>Month</span></label>
+        <label><input type="radio" name="view" value="week"><span>Week</span></label>
+      </div>
+      <div class="big-label" id="bigLabel">Running cost a year</div>
+      <div class="big" id="total" aria-live="polite">£0</div>
+      <p class="sub" id="summary">&nbsp;</p>
+      <div class="stats">
+        <div class="stat"><b id="sKwh">0</b><span>kWh a year</span></div>
+        <div class="stat"><b id="sStand">£0</b><span>Standing charge a year</span></div>
+      </div>
+      <label class="tick"><input type="checkbox" id="incStand"> Add the standing charge to the total</label>
+      <div class="table-scroll">
+        <table>
+          <caption class="sr-only">Running cost per appliance</caption>
+          <thead><tr><th>Appliance</th><th class="r">Per hour</th><th class="r">Month</th><th class="r">Year</th></tr></thead>
+          <tbody id="rows"></tbody>
+          <tfoot><tr><td>Total</td><td></td><td class="r" id="fMonth">£0</td><td class="r" id="fYear">£0</td></tr></tfoot>
+        </table>
+      </div>
+      <div class="actions">
+        <button class="btn" id="share" type="button">🔗 Copy share link</button>
+        <button class="btn ghost" id="copy" type="button">Copy result</button>
+        <button class="btn ghost" id="print" type="button">Print</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="grid2 section">
+    <section class="card" aria-labelledby="bars-h">
+      <h2 id="bars-h">What costs the most</h2>
+      <div class="bars" id="bars"></div>
+      <p class="hint">Yearly cost of each appliance at your unit rate.</p>
+    </section>
+    <section class="card" aria-labelledby="ph-h">
+      <h2 id="ph-h">Cost per hour of use</h2>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Power</th><th class="r">kWh per hour</th><th class="r">Cost per hour</th></tr></thead>
+          <tbody id="perHour"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <article class="card section article" id="how">
+    <h2>How appliance running costs are worked out</h2>
+    <p>Electricity is sold by the <strong>kilowatt-hour (kWh)</strong>: using 1,000 watts for one hour. To find what an appliance costs, work out how many kWh it uses and multiply by your unit rate:</p>
+    <ul>
+      <li><strong>kWh = watts ÷ 1,000 × hours used</strong></li>
+      <li><strong>Cost = kWh × unit rate</strong></li>
+    </ul>
+    <p>A 2,500 W tumble dryer running for an hour uses 2.5 kWh. At 26.32p per kWh that’s about <strong>66p a load</strong>, or around £34 a year at one load a week.</p>
+    <h3>The Ofgem price cap from 1 October 2026</h3>
+    <p>Ofgem sets a cap on the unit rates and standing charges suppliers can charge on standard variable (default) tariffs. From <strong>1 October to 31 December 2026</strong> the average capped electricity price for Direct Debit customers in England, Scotland and Wales is <strong>26.32p per kWh</strong> with a standing charge of <strong>54.83p a day</strong>. VAT has been removed from electricity bills from 1 October 2026 to 31 March 2027. From 1 July to 30 September 2026 the rates were 26.11p per kWh and 57.19p a day, including 5% VAT.</p>
+    <p>These are averages. Your rate depends on your region, how you pay and your meter. Fixed tariffs, Economy 7 and prepayment meters can be different, so type in the unit rate from your bill if you know it. Northern Ireland isn’t covered by the Ofgem cap.</p>
+    <h3>Getting an accurate figure</h3>
+    <p>Many appliances don’t run at full power all the time. Heaters, ovens and fridges switch on and off with their thermostat, and a washing machine uses most of its energy heating water at the start of a cycle. For these, the yearly kWh on the energy label (or a plug-in energy monitor) is more accurate than the maximum wattage.</p>
+    <p class="muted">Sources: <a href="https://www.ofgem.gov.uk/information-consumers/energy-advice-households/get-energy-price-cap-standing-charges-and-unit-rates-region" rel="noopener">Ofgem – Energy price cap standing charges and unit rates by region</a> and <a href="https://www.ofgem.gov.uk/information-consumers/energy-advice-households/energy-price-cap" rel="noopener">Ofgem – Energy price cap explained</a> (cap periods, VAT). Last checked 8 October 2026.</p>
+  </article>
+
+  <section class="section article faq" id="faq" aria-labelledby="faq-h">
+    <h2 id="faq-h">Energy running cost FAQs</h2>
+    <details><summary>How do I work out how much an appliance costs to run?</summary><p>Divide its power in watts by 1,000 to get kilowatts, multiply by the hours you use it to get kilowatt-hours (kWh), then multiply by your unit rate. A 2,000 W heater used for 3 hours uses 6 kWh, which costs £1.58 at 26.32p per kWh.</p></details>
+    <details><summary>What is the electricity price cap unit rate now?</summary><p>From 1 October to 31 December 2026 the Ofgem price cap averages 26.32p per kWh for electricity, with a daily standing charge of 54.83p, for people paying by Direct Debit in England, Scotland and Wales. There’s no VAT on electricity from 1 October 2026 to 31 March 2027.</p></details>
+    <details><summary>How much does it cost to boil a kettle?</summary><p>A 3 kW kettle that runs for 4 minutes uses 0.2 kWh. At 26.32p per kWh that’s about 5.3p. Boiling only the water you need cuts the cost.</p></details>
+    <details><summary>Is the price cap a limit on my bill?</summary><p>No. It caps the unit rate and standing charge on standard variable tariffs, not your total bill. The more you use, the more you pay, and your rate depends on your region, meter and how you pay.</p></details>
+    <details><summary>Does this include the standing charge?</summary><p>The appliance costs don’t, because you pay the standing charge every day whatever you use. The calculator shows it separately so you can see your full yearly electricity cost.</p></details>
+    <details><summary>How much does a 2 kW heater cost per hour?</summary><p>At 26.32p per kWh, a 2 kW (2,000 W) heater costs about 52.6p for every hour it runs at full power. Thermostats cycle on and off, so the real cost is often lower.</p></details>
+    <details><summary>Where do I find my appliance’s wattage?</summary><p>Look for the rating plate or sticker on the back or base, or check the manual. Fridges and washing machines also show an energy label with yearly kWh, which is more accurate than their maximum wattage.</p></details>
+  </section>
+
+  <p class="disclaimer section"><strong>Disclaimer:</strong> Estimates use the power rating you enter and the Ofgem average unit rate for Direct Debit customers. Real use varies with thermostats, settings and standby. Your own tariff, region, meter type or payment method can change the rate: check your bill and type your unit rate in for a precise figure.</p>
+
+  <section class="section" aria-labelledby="more-h">
+    <h2 id="more-h" style="font-size:20px">More free UK calculators</h2>
+    <ul class="more"><li><a href="https://take-home-pay-calculator-uk.vercel.app/">Take-Home Pay Calculator<small>Income Tax, NI &amp; student loan 2026/27</small></a></li><li><a href="https://uk-hourly-salary-calculator.vercel.app/">Hourly to Salary Calculator<small>Pay converter + minimum wage check</small></a></li><li><a href="https://uk-redundancy-pay-calculator.vercel.app/">Redundancy Pay Calculator<small>Statutory pay with the £751 cap</small></a></li><li><a href="https://uk-holiday-entitlement-calculator.vercel.app/">Holiday Entitlement Calculator<small>Part-time, leavers &amp; 12.07% accrual</small></a></li><li><a href="https://uk-mortgage-repayment-calculator.vercel.app/">Mortgage Calculator<small>Monthly payment, overpayments &amp; affordability</small></a></li><li><a href="https://stamp-duty-calculator-england.vercel.app/">Stamp Duty Calculator<small>First-time buyer, second home &amp; non-resident</small></a></li></ul>
+    <h2 style="font-size:17px;margin-top:22px">Free Bangladesh calculators (Bangla &amp; English)</h2>
+    <ul class="more"><li><a href="https://bangladesh-income-tax-calculator.vercel.app/">Bangladesh Income Tax Calculator<small>Tax year 2026-27 (NBR slabs)</small></a></li><li><a href="https://bangladesh-electricity-bill-calculator.vercel.app/">Bangladesh Electricity Bill Calculator<small>BERC 2026 residential tariff</small></a></li><li><a href="https://bkash-nagad-rocket-charge-calculator.vercel.app/">bKash, Nagad &amp; Rocket Charge Calculator<small>Cash out fees compared</small></a></li></ul>
+    <p style="margin-top:14px"><a href="https://mfaysal.com/uk-tools">See all free UK tools on mfaysal.com →</a></p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <span>Built by <a href="https://mfaysal.com" rel="author">Mahir Faysal</a> · <a href="https://mfaysal.com/projects/uk-energy-cost-calculator">About this project</a> · <a href="https://mfaysal.com/uk-tools">All UK tools</a> · <a href="https://github.com/mfaysal-dev/uk-energy-cost-calculator">Source on GitHub</a></span>
+    <span>Price cap figures checked against Ofgem · 8 October 2026</span>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
